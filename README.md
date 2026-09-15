@@ -53,8 +53,9 @@ If you previously shared a key publicly, rotate it in [Google Cloud Console](htt
 ```
 ├── index.html
 ├── styles.css
-├── config.js           # your API key (gitignored)
+├── config.js           # your API key (generated on Render)
 ├── config.example.js   # template for others
+├── build-config.js     # creates config.js on Render from env var
 ├── api.js              # Google Books fetch helpers
 ├── app.js              # UI logic
 ├── .gitignore
