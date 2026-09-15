@@ -41,9 +41,13 @@ function buildQuery(rawQuery, mode, genre) {
  * @returns {Promise<{ items: object[], totalItems: number }>}
  */
 async function searchBooks(options = {}) {
-  if (typeof GOOGLE_BOOKS_API_KEY === "undefined" || !GOOGLE_BOOKS_API_KEY || GOOGLE_BOOKS_API_KEY === "YOUR_API_KEY_HERE") {
+  if (
+    typeof GOOGLE_BOOKS_API_KEY === "undefined" ||
+    !GOOGLE_BOOKS_API_KEY ||
+    GOOGLE_BOOKS_API_KEY === "YOUR_API_KEY_HERE"
+  ) {
     throw new Error(
-      "Missing API key. Locally: copy config.example.js to config.js. On Render: set GOOGLE_BOOKS_API_KEY and use build command `node build-config.js`."
+      "Missing API key. Locally: copy config.example.js to config.js. On Render: set GOOGLE_BOOKS_API_KEY and Build Command `node build-config.js`."
     );
   }
 
