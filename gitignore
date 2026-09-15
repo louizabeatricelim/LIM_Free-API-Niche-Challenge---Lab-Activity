@@ -1,0 +1,9 @@
+# Local secrets — never commit API keys
+config.js
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
