@@ -1,0 +1,825 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f5f1e9;
+
+    color: #292722;
+
+    line-height: 1.5;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 72px;
+
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #292722;
+
+    color: white;
+}
+
+.logo {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 23px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+}
+
+.nav-links > a,
+.dropdown-button {
+    color: white;
+
+    background: transparent;
+
+    border: none;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+.nav-links > a:hover,
+.dropdown-button:hover {
+    opacity: 0.7;
+}
+
+
+/* =========================
+   DROPDOWN
+========================= */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-button {
+    padding: 25px 0;
+}
+
+.dropdown-menu {
+    position: absolute;
+
+    top: 60px;
+    right: 0;
+
+    width: 190px;
+
+    background: white;
+
+    border: 1px solid #ddd6ca;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+
+    display: none;
+
+    z-index: 20;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu button {
+    width: 100%;
+
+    padding: 13px 16px;
+
+    text-align: left;
+
+    background: white;
+
+    border: none;
+
+    color: #292722;
+
+    font-size: 14px;
+}
+
+.dropdown-menu button:hover {
+    background: #f5f1e9;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 470px;
+
+    display: flex;
+    align-items: center;
+
+    background: #292722;
+
+    color: white;
+
+    padding: 70px 7% 90px;
+}
+
+.hero-content {
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.eyebrow {
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+
+    opacity: 0.65;
+}
+
+.hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(42px, 7vw, 76px);
+
+    line-height: 1.05;
+
+    font-weight: normal;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    display: block;
+
+    font-style: italic;
+}
+
+.hero-description {
+    max-width: 620px;
+
+    margin: 0 auto 32px;
+
+    color: #d5d0c7;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-form {
+    max-width: 700px;
+
+    margin: auto;
+
+    display: flex;
+
+    background: white;
+
+    border-radius: 5px;
+
+    overflow: hidden;
+}
+
+.search-form input {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 17px 18px;
+
+    border: none;
+
+    outline: none;
+
+    color: #292722;
+
+    font-size: 15px;
+}
+
+.search-form button {
+    padding: 0 25px;
+
+    border: none;
+
+    background: #d4b483;
+
+    color: #292722;
+
+    font-weight: bold;
+}
+
+.search-form button:hover {
+    opacity: 0.85;
+}
+
+
+/* =========================
+   DISCOVER BUTTON
+========================= */
+
+.discover-btn {
+    margin-top: 18px;
+
+    padding: 11px 20px;
+
+    background: transparent;
+
+    border: 1px solid #777269;
+
+    border-radius: 5px;
+
+    color: white;
+
+    font-size: 13px;
+}
+
+.discover-btn:hover {
+    background: white;
+
+    color: #292722;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+    width: 86%;
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 65px 0 90px;
+}
+
+.results-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin-bottom: 28px;
+
+    border-bottom: 1px solid #ddd6ca;
+
+    padding-bottom: 18px;
+}
+
+.results-header h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 30px;
+
+    font-weight: normal;
+}
+
+.results-header p {
+    margin-top: 4px;
+
+    color: #777269;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   BOOK GRID
+========================= */
+
+.book-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 28px;
+}
+
+
+/* =========================
+   BOOK CARD
+========================= */
+
+.book-card {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background: white;
+
+    border: 1px solid #e1dbd1;
+
+    border-radius: 4px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   COVER
+========================= */
+
+.cover-container {
+    width: 100%;
+
+    height: 290px;
+
+    background: #e9e3d8;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.cover-container img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.no-cover {
+    text-align: center;
+
+    color: #777269;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   BOOK INFORMATION
+========================= */
+
+.book-info {
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 18px;
+}
+
+.book-title {
+    min-height: 48px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 18px;
+
+    line-height: 1.35;
+
+    color: #292722;
+
+    margin-bottom: 7px;
+}
+
+.book-author {
+    min-height: 34px;
+
+    color: #777269;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   BOOK META
+========================= */
+
+.book-meta {
+    min-height: 28px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+
+    color: #8a8277;
+
+    font-size: 11px;
+}
+
+.book-meta span:last-child {
+    text-align: right;
+}
+
+
+/* =========================
+   BOOK ACTIONS
+========================= */
+
+.book-actions {
+    margin-top: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+/* =========================
+   VIEW BOOK
+========================= */
+
+.view-btn {
+    width: 100%;
+
+    display: block;
+
+    padding: 10px;
+
+    border-radius: 5px;
+
+    background: #292722;
+
+    border: 1px solid #292722;
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.view-btn:hover {
+    background: #454139;
+
+    border-color: #454139;
+}
+
+
+/* =========================
+   SAVE / REMOVE
+========================= */
+
+.save-btn,
+.remove-btn {
+    width: 100%;
+
+    padding: 10px;
+
+    border-radius: 5px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.save-btn {
+    background: #d4b483;
+
+    border: 1px solid #d4b483;
+
+    color: #292722;
+}
+
+.save-btn:hover {
+    opacity: 0.85;
+}
+
+.remove-btn {
+    background: transparent;
+
+    border: 1px solid #b8b1a5;
+
+    color: #777269;
+}
+
+.remove-btn:hover {
+    background: #292722;
+
+    color: white;
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.loading {
+    padding: 70px 20px;
+
+    text-align: center;
+
+    color: #777269;
+}
+
+.spinner {
+    width: 35px;
+
+    height: 35px;
+
+    margin: 0 auto 15px;
+
+    border: 3px solid #ddd6ca;
+
+    border-top-color: #292722;
+
+    border-radius: 50%;
+
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.error {
+    grid-column: 1 / -1;
+
+    padding: 30px;
+
+    text-align: center;
+
+    color: #9b4a3c;
+
+    background: #f7e9e5;
+
+    border: 1px solid #e5c5be;
+
+    border-radius: 5px;
+}
+
+
+/* =========================
+   EMPTY MY BOOKS
+========================= */
+
+.empty-books {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    color: #777269;
+}
+
+.empty-icon {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+.empty-books h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 26px;
+
+    font-weight: normal;
+
+    color: #292722;
+
+    margin-bottom: 10px;
+}
+
+.empty-books p {
+    max-width: 420px;
+
+    margin: auto;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    padding: 35px 20px;
+
+    text-align: center;
+
+    background: #292722;
+
+    color: #aaa49a;
+
+    font-size: 12px;
+
+    line-height: 2;
+}
+
+.footer a {
+    color: #d4b483;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .book-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 760px) {
+
+    .navbar {
+        height: auto;
+
+        padding: 18px 5%;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 18px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .dropdown-button {
+        padding: 0;
+    }
+
+    .dropdown-menu {
+        top: 25px;
+
+        right: -50px;
+    }
+
+    .hero {
+        padding: 60px 5% 70px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .search-form {
+        flex-direction: column;
+
+        background: transparent;
+
+        gap: 8px;
+    }
+
+    .search-form input {
+        border-radius: 5px;
+
+        padding: 15px;
+    }
+
+    .search-form button {
+        padding: 14px;
+
+        border-radius: 5px;
+    }
+
+    .main-content {
+        width: 90%;
+    }
+
+    .book-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 18px;
+    }
+
+    .cover-container {
+        height: 240px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .nav-links {
+        gap: 12px;
+
+        font-size: 12px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .book-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cover-container {
+        height: 300px;
+    }
+
+    .results-header h2 {
+        font-size: 25px;
+    }
+
+}

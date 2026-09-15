@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>BookFinder</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header class="navbar">
+
+        <div
+            class="logo"
+            onclick="goHome()"
+        >
+            📚 BookFinder
+        </div>
+
+        <nav class="nav-links">
+
+            <a
+                href="#"
+                onclick="showMyBooks(event)"
+            >
+                My Books
+            </a>
+
+            <div class="dropdown">
+
+                <button class="dropdown-button">
+                    Browse ▾
+                </button>
+
+                <div class="dropdown-menu">
+
+                    <button
+                        onclick="browseSubject('fiction')"
+                    >
+                        Subjects
+                    </button>
+
+                    <button
+                        onclick="loadTrending()"
+                    >
+                        Trending
+                    </button>
+
+                    <button
+                        onclick="loadLibraryExplorer()"
+                    >
+                        Library Explorer
+                    </button>
+
+                    <button
+                        onclick="loadLists()"
+                    >
+                        Lists
+                    </button>
+
+                </div>
+
+            </div>
+
+            <a
+                href="https://openlibrary.org/developers/api"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                API
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="eyebrow">
+                BOOK DISCOVERY
+            </p>
+
+            <h1>
+                Find your next
+                <span>favorite book.</span>
+            </h1>
+
+            <p class="hero-description">
+                Search millions of books, explore subjects,
+                discover trending titles, and build your
+                personal bookshelf.
+            </p>
+
+
+            <!-- SEARCH -->
+
+            <form
+                id="searchForm"
+                class="search-form"
+            >
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by title, author, subject..."
+                    autocomplete="off"
+                >
+
+                <button
+                    type="submit"
+                >
+                    Search
+                </button>
+
+            </form>
+
+
+            <!-- DISCOVER -->
+
+            <button
+                id="discoverBtn"
+                class="discover-btn"
+                type="button"
+            >
+                ✦ Discover Books
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         RESULTS
+    ========================== -->
+
+    <main class="main-content">
+
+        <div class="results-header">
+
+            <div>
+
+                <h2 id="resultsTitle">
+                    Popular Books
+                </h2>
+
+                <p id="resultCount">
+                    Discover something new
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOADING -->
+
+        <div
+            id="loading"
+            class="loading hidden"
+        >
+            <div class="spinner"></div>
+
+            <p>
+                Loading books...
+            </p>
+        </div>
+
+
+        <!-- ERROR -->
+
+        <div
+            id="errorMessage"
+            class="error hidden"
+        ></div>
+
+
+        <!-- BOOK GRID -->
+
+        <section
+            id="bookGrid"
+            class="book-grid"
+        ></section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <p>
+            BookFinder uses the
+            <a
+                href="https://openlibrary.org/developers/api"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Open Library API
+            </a>.
+        </p>
+
+        <p>
+            Built for ITCC 14 A.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
