@@ -42,7 +42,9 @@ function buildQuery(rawQuery, mode, genre) {
  */
 async function searchBooks(options = {}) {
   if (typeof GOOGLE_BOOKS_API_KEY === "undefined" || !GOOGLE_BOOKS_API_KEY || GOOGLE_BOOKS_API_KEY === "YOUR_API_KEY_HERE") {
-    throw new Error("Missing API key. Copy config.example.js to config.js and add your Google Books API key.");
+    throw new Error(
+      "Missing API key. Locally: copy config.example.js to config.js. On Render: set GOOGLE_BOOKS_API_KEY and use build command `node build-config.js`."
+    );
   }
 
   const {

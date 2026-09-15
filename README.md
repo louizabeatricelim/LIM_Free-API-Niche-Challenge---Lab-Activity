@@ -42,22 +42,44 @@ No build step or package install is required.
 ## How the API key is handled
 
 - The real key lives only in **`config.js`**.
-- **`config.js` is listed in `.gitignore`**, so it is not committed to GitHub.
+- **`config.js` is listed in `.gitignore`**, so it is **not** on GitHub or Render by default.
 - The repo includes **`config.example.js`** with a placeholder so others can set up their own key.
 - Never paste your key into `README.md`, commit messages, or public issues.
 
 If you previously shared a key publicly, rotate it in [Google Cloud Console](https://console.cloud.google.com/apis/credentials).
+
+## Deploy on Render (static site)
+
+The live site will keep showing “Missing API key” until **both** of these are true:
+
+1. Your latest code is **committed and pushed** (including `api.js`, `app.js`, `styles.css`, `build-config.js`, `config.example.js`, and the updated `index.html`).
+2. Render creates `config.js` at build time from an environment variable.
+
+**Render settings**
+
+| Setting | Value |
+|--------|--------|
+| Build Command | `node build-config.js` |
+| Publish Directory | `.` |
+
+**Environment variable**
+
+| Key | Value |
+|-----|--------|
+| `GOOGLE_BOOKS_API_KEY` | your Google Books API key |
+
+Then trigger a **Manual Deploy**. Check the build logs for `Wrote config.js for deploy.`
 
 ## Project structure
 
 ```
 ├── index.html
 ├── styles.css
-├── config.js           # your API key (generated on Render)
-├── config.example.js   # template for others
-├── build-config.js     # creates config.js on Render from env var
-├── api.js              # Google Books fetch helpers
-├── app.js              # UI logic
+├── config.js           # local only / generated on Render (gitignored)
+├── config.example.js
+├── build-config.js     # Render build: writes config.js from env
+├── api.js
+├── app.js
 ├── .gitignore
 └── README.md
 ```
