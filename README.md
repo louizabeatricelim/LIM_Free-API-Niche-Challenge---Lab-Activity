@@ -26,10 +26,10 @@ No build step or package install is required.
 1. Copy the example config and add your API key:
 
    ```bash
-   cp js/config.example.js js/config.js
+   cp config.example.js config.js
    ```
 
-   Then open `js/config.js` and replace `YOUR_API_KEY_HERE` with your [Google Books API key](https://console.cloud.google.com/apis/credentials).
+   Then open `config.js` and replace `YOUR_API_KEY_HERE` with your [Google Books API key](https://console.cloud.google.com/apis/credentials).
 
 2. Serve the folder with a local static server (recommended so scripts load reliably):
 
@@ -41,9 +41,9 @@ No build step or package install is required.
 
 ## How the API key is handled
 
-- The real key lives only in **`js/config.js`**.
-- **`js/config.js` is listed in `.gitignore`**, so it is not committed to GitHub.
-- The repo includes **`js/config.example.js`** with a placeholder so others can set up their own key.
+- The real key lives only in **`config.js`**.
+- **`config.js` is listed in `.gitignore`**, so it is not committed to GitHub.
+- The repo includes **`config.example.js`** with a placeholder so others can set up their own key.
 - Never paste your key into `README.md`, commit messages, or public issues.
 
 If you previously shared a key publicly, rotate it in [Google Cloud Console](https://console.cloud.google.com/apis/credentials).
@@ -52,12 +52,11 @@ If you previously shared a key publicly, rotate it in [Google Cloud Console](htt
 
 ```
 ├── index.html
-├── css/styles.css
-├── js/
-│   ├── config.js           # your API key (gitignored)
-│   ├── config.example.js   # template for others
-│   ├── api.js              # Google Books fetch helpers
-│   └── app.js              # UI logic
+├── styles.css
+├── config.js           # your API key (gitignored)
+├── config.example.js   # template for others
+├── api.js              # Google Books fetch helpers
+├── app.js              # UI logic
 ├── .gitignore
 └── README.md
 ```
